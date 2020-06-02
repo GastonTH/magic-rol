@@ -1,13 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+  
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="start">
-      
-    </div>
-  );
+
+export default class App extends Component {
+
+  constructor(props) {
+
+    super(props)
+    this.state = { 
+      selector_menu : 0,
+      loggin : false // estado para saber si estas logeado
+     };
+
+    this.cambioPestanya = this.cambioPestanya.bind(this);/* importante blindar el contenido de una funcion para que pueda acceder al state */
 }
 
-export default App;
+cambioPestanya(){
+  this.setState({selector_menu: 1 })
+}
+
+render(){
+
+  return(
+
+    <div className=''></div>
+
+  )
+
+}
+
+}
