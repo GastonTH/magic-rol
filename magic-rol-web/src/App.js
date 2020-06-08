@@ -8,6 +8,7 @@ import Aventura from './components/Aventura/Aventura.js';
 import MisFichas from './components/MisFichas/MisFichas.js';
 import Fichas from './components/Fichas/Fichas.js';
 import LoginRequires from './components/LoginRequires/LoginRequires.js';
+import Modal_ from './components/Modal_/Modal_.js';
 
 
 
@@ -82,7 +83,9 @@ export default class App extends Component {
 
 //funcion cambia al error de no login y pedir el login
   ErrorLogin(){
-
+    return(
+      <div><LoginRequires /></div>
+    )
   }
 
   cambioFichas(e){
@@ -126,16 +129,17 @@ export default class App extends Component {
   cambioAventura(e){
     e.preventDefault();
     console.log('click aventura');
+
+    this.state.login ? this.setState({selector_menu:5}) : this.setState({selector_menu:6});
     
-    this.setState({selector_menu:5})    
     return false
   }
 
   toggleLogin(e){
     //console.log('toggle loggin - ' + this.state.login);
-    this.state.login ? this.setState({login:false, selector_menu: 0}) : this.setState({login:true, selector_menu: 0});
-    
-    return false
+    this.state.login ? this.setState({login:false, selector_menu: 0}) : this.setState({login:true, selector_menu: 0});    
+
+
   }
 
   llamadaMenu(){
@@ -149,7 +153,7 @@ export default class App extends Component {
             <li onClick={this.cambioFichas}>{this.state.login ? 'Mis Fichas' : 'Fichas de ejemplo'}</li>
             <li onClick={this.cambioLogin}>{this.state.login ? 'Mi Perfil' : 'Login'}</li>
             <li onClick={this.cambioAventura}>Salas</li>   
-            <li><button onClick={this.toggleLogin}>Pulsame</button></li>         
+            <li><button onClick={this.toggleLogin}>Pulsame</button></li>
         </ul>
         </div>
 
