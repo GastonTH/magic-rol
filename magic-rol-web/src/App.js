@@ -64,6 +64,9 @@ export default class App extends Component {
 
       case 6:
         return(<div id='contenedor'><LoginRequires /></div>)
+
+        default:
+          break;
     }
 
   }
