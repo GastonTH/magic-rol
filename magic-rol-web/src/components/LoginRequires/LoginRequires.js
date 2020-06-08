@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './LogginRequires.css';
+import './LoginRequires.css';
 
 
-export default class LogginRequires extends Component {
+export default class LoginRequires extends Component {
 
     render(){
 
