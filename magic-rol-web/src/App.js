@@ -133,7 +133,7 @@ export default class App extends Component {
 
   toggleLogin(e){
     //console.log('toggle loggin - ' + this.state.login);
-    this.state.login ? this.setState({login:false}) : this.setState({login:true});
+    this.state.login ? this.setState({login:false, selector_menu: 0}) : this.setState({login:true, selector_menu: 0});
     
     return false
   }
