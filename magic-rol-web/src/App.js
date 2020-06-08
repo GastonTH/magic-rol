@@ -119,9 +119,9 @@ export default class App extends Component {
 
   cambioAventura(e){
     e.preventDefault();
-    console.log('click salas');
+    console.log('click aventura');
     
-    this.setState({selector_menu:3})    
+    this.setState({selector_menu:5})    
     return false
   }
 
