@@ -19,3 +19,7 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
 
 - Poder que una persona cree o acceda a una sala o pueda acceder a una partida en solitarios.
+
+base de datos
+Usuario -> admin_rol
+Contrasenya -> gx53$Q7@005
