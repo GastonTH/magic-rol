@@ -4,17 +4,11 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-    let connection = mysql.createConnection(config);
+let connection = mysql.createConnection(config);
 
-    let sql = `SELECT * FROM usuarios`;
-    connection.query(sql, (error, results, fields) => {
-    if (error) {
-        return console.error(error.message);
-    }
-    console.log(results);
-    });
-
-    connection.end();
+//hace que todo lo relacionado con la app cuelgue de /api/
+//las rutas para acceder a lo relacionado con el usuario es la de abajo. 
+app.use('/api', require('./app/routes/users.routes.js'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
