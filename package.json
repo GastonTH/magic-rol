@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/GastonTH/magic-rol#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
