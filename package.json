@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GastonTH/magic-rol/issues"
   },
-  "homepage": "https://github.com/GastonTH/magic-rol#readme"
+  "homepage": "https://github.com/GastonTH/magic-rol#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }
