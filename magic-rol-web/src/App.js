@@ -8,7 +8,7 @@ import Aventura from './components/Aventura/Aventura.js';
 import MisFichas from './components/MisFichas/MisFichas.js';
 import Fichas from './components/Fichas/Fichas.js';
 import LoginRequires from './components/LoginRequires/LoginRequires.js';
-import Modal_ from './components/Modal_/Modal_.js';
+//import Modal_ from './components/Modal_/Modal_.js';
 
 
 
@@ -25,10 +25,11 @@ export default class App extends Component {
       - 3 Fichas de ejemplo
       - 4 Mis Fichas
       - 5 Aventura
+      - 6 Registro
       */
       selector_menu : 0,
 
-      login : true // estado para saber si estas logeado
+      login : false // estado para saber si estas logeado
      };
 
     /* importante blindar el contenido de una funcion para que pueda acceder al state */
