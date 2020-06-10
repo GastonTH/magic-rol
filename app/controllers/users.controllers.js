@@ -1,8 +1,12 @@
 const conexionBD = require("../model/magic_rol.model").getConection();
 
+//funcion que verificara si el usuario esta registrado
 exports.isValidUser = (req, res) => {
 
-    conexionBD.connect((err) => {
+    res.send('funciona')
+
+
+    /*conexionBD.connect((err) => {
 
         if (!err) {
 
@@ -22,5 +26,5 @@ exports.isValidUser = (req, res) => {
 
         }
 
-    })
+    })*/
 };
