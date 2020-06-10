@@ -8,7 +8,7 @@ exports.isValidUser = async(req, res) => {
     connection.connect(async err => {
         if (!err) {
             let sql = 'select * from usuarios';
-            connection.query(sql, (error, results, fields) => {
+            await connection.query(sql, (error, results, fields) => {
                 if (error) {
                     return console.error(error.message);
                 }
@@ -16,7 +16,7 @@ exports.isValidUser = async(req, res) => {
                 connection.end();
 
             });
-            console.log('conexion cerrada');
+            console.log(err);
 
         } else {
             console.log(err);
