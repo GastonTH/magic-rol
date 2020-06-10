@@ -1,3 +1,5 @@
+let connection = undefined;
+
 //funcion que, exporta getConection con la conexion a la base de datos
 module.exports.getConection = function() { //devuelve la conexion a la base de datos
 
@@ -10,6 +12,6 @@ module.exports.getConection = function() { //devuelve la conexion a la base de d
         database: 'magic_rol'
     });
 
-    let connection = mysql.createConnection(config);
+    if (!connection) connection = mysql.createConnection(config);
     return connection;
 }
