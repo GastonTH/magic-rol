@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magic Rol</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="./scripts/index.js"></script>
+    <style>
+        @import url('./style/index.css');
+    </style>
 </head>
+
 <body>
 
     <h1>APP</h1>
 
-    <login>
-        Usuario <input type="text" value="abcd" name="usuario"/>
-        Contrasenya <input type="password" value="1234" name="contrasenya"/>
-        <input type="button" name="button_login" value="Acceder">
+    <login class="container general">
+        <!--Usuario <input type="text" value="abcd" name="usuario" /> Contrasenya <input type="password" value="1234" name="contrasenya" />
+        <input type="button" name="button_login" value="Acceder">-->
+        <div>
+            <div class="form-group">
+                <!--user-->
+                <label>Correo electrónico</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp">
+                <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+            </div>
+            <div class="form-group">
+                <!--pass-->
+                <label>Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <input type="submit" value='Login' class="btn btn-primary" name='button_login' />
+        </div>
     </login>
-    
+
 </body>
+
 </html>

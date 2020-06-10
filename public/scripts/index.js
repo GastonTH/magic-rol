@@ -1,10 +1,10 @@
-function funcionLogin(){
+function funcionLogin() {
 
     let usuario = document.querySelector('input[name="usuario"]').value;
     let contrasenya = document.querySelector('input[name="contrasenya"]').value;
 
     console.log(usuario + ' y ' + contrasenya);
-    
+
 }
 
 function cargarEventos() {
