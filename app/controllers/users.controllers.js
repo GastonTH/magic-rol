@@ -1,30 +1,24 @@
-const conexionBD = require("../model/magic_rol.model").getConection();
+const connection = require("../model/magic_rol.model").getConection();
 
 //funcion que verificara si el usuario esta registrado
 exports.isValidUser = (req, res) => {
 
-    res.send('funciona')
-
-
-    /*conexionBD.connect((err) => {
-
+    connection.connect((err) => {
         if (!err) {
-
-            let sql = `SELECT * FROM usuarios`;
+            let sql = 'select * from usuarios';
             connection.query(sql, (error, results, fields) => {
                 if (error) {
                     return console.error(error.message);
                 }
-                console.log(results);
-            });
+                res.send(results);
 
+            });
+            connection.end();
+            console.log('conexion cerrada');
 
         } else {
-
-            console.log("Error al acceder a la base de datos");
-
+            console.log('error de conexion');
 
         }
-
-    })*/
+    })
 };

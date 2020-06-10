@@ -5,13 +5,11 @@ module.exports.getConection = function() { //devuelve la conexion a la base de d
 
     let config = ({
         host: 'localhost',
-        user: 'admin_rol',
-        password: 'gx53$Q7@005',
+        user: 'root',
+        password: '',
         database: 'magic_rol'
     });
 
     let connection = mysql.createConnection(config);
-
     return connection;
-
 }
