@@ -8,8 +8,9 @@ const handlebass = require('express-handlebars');
 //configuracion
 app.set('puerto', 3000); //puerto por el que escuchara nuestra app
 app.set('views', path.join(__dirname, 'views')) //le digo donde esta la carpeta views que es donde almacenara las vistas de la app
+
 app.engine('.hbs', handlebass({
-    defaultLayout: 'main', //nombre de la plantilla por defecto
+    defaultLayout: 'main', //nombre de la plantilla por defecto, a la que llamara todas las paginas
     layoutsDir: path.join(app.get('views'), 'layouts'), //esto le dice que la carpeta layouts esta dentro de view
     partialsDir: path.join(app.get('views'), 'partials'),
     helpers: require('./lib/handlebars'),
@@ -17,7 +18,7 @@ app.engine('.hbs', handlebass({
 }))
 
 app.set('view engine', '.hbs');
-app.use(express.urlencoded({ extended: false })); //aceptara datos sencillos
+app.use(express.urlencoded({ extended: false })); //express aceptara datos sencillos
 app.use(express.json()); //aceptar futuros jsons
 
 //peticiones
