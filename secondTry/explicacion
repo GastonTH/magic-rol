@@ -1,1 +1,2 @@
 el fichero database es el que solo hace la conexion
+llamar los css desde public ya que la ruta esta desde public
