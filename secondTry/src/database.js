@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const { database } = require('./db.config');
-const { promisify } = require('util');
+const util = require('util');
 //creando la conexion
 
 const connection = mysql.createPool(database);
@@ -28,6 +28,6 @@ connection.getConnection((err, connection) => {
     return;
 });
 
-connection.query = promisify(connection.query); //forma de hacer promesas con node y su complemento promisify de utils
+connection.query = util.promisify(connection.query); //forma de hacer promesas con node y su complemento promisify de utils
 
 module.exports = connection;

@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views')) //le digo donde esta la carpeta 
 app.engine('.hbs', handlebass({
     defaultLayout: 'main', //nombre de la plantilla por defecto, a la que llamara todas las paginas
     layoutsDir: path.join(app.get('views'), 'layouts'), //esto le dice que la carpeta layouts esta dentro de view
-    partialsDir: path.join(app.get('views'), 'partials'),
+    partialsDir: path.join(app.get('views'), 'partials'), //carpeta de partials
     helpers: require('./lib/handlebars'),
     extname: '.hbs'
 }))
