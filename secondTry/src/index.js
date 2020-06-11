@@ -31,10 +31,13 @@ app.use((req, res, next) => {
 });
 
 //rutas
-
-app.use(require('./routes/routes'))
+app.use(require('./routes/routes'));
+app.use(require('./routes/authentication'));
+app.use('/links', require('./routes/links'));
 
 //archivos publicos
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 //inicializar el server
 app.listen(app.get('puerto'), () => {
