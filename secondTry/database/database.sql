@@ -23,12 +23,3 @@ CREATE TABLE Links(
     CONSTRAINT key_user FOREIGN KEY (user_id) REFERENCES Usuarios(id),
     PRIMARY KEY (id)
 );
-
-CREATE TABLE ficha(
-    
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id INT
-    --falta desarrollaro la ficha
-    CONSTRAINT key_user FOREIGN KEY (user_id) REFERENCES Usuarios(id),
-    PRIMARY KEY (id)
-);
