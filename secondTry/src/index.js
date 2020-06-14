@@ -4,6 +4,12 @@ const path = require('path');
 const app = express();
 //handlebass para las vistas
 const handlebass = require('express-handlebars');
+//mensajes
+const flash = require('connect-flash');
+//sesiones para flash
+const sesion = require('express-session');
+//exportar la conexion a la base de datos
+const { database } = require('./db.config');
 
 //configuracion
 app.set('puerto', 3000); //puerto por el que escuchara nuestra app
@@ -24,11 +30,27 @@ app.use(express.json()); //aceptar futuros jsons
 
 //peticiones
 const morgan = require('morgan');
+const MySQLStore = require('express-mysql-session');
 app.use(morgan('dev')); //que muestra, dev
 
-//variables globales
+//mensajes
+app.use(flash());
 
+//sesion
+app.use(sesion({
+
+    secret: 'noct0',
+    resave: 'false',
+    saveUninitialized: 'false',
+    store: new MySQLStore(database)
+
+}));
+
+//variables globales
 app.use((req, res, next) => {
+    app.locals.success = req.flash('success');
+    app.locals.delete = req.flash('delete');
+    app.locals.edit = req.flash('edit');
     next();
 });
 
