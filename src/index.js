@@ -10,9 +10,25 @@ const flash = require('connect-flash');
 const session = require('express-session');
 //exportar la conexion a la base de datos
 const { database } = require('./db.config');
+//mysql sesiones
+const MySQLStore = require('express-mysql-session')(session);
+//morgan
+const morgan = require('morgan');
 //passport
 const passport = require('passport');
+
+//sesion
+app.use(session({ //importante inicializar la sesion al principio XD by ruben
+
+    secret: 'projectTable',
+    resave: 'false',
+    saveUninitialized: 'false',
+    store: new MySQLStore(database)
+
+}));
+
 require('./lib/passport')
+
 
 //configuracion
 app.set('puerto', 3000); //puerto por el que escuchara nuestra app
@@ -32,25 +48,12 @@ app.use(express.urlencoded({ extended: false })); //express aceptara datos senci
 app.use(express.json()); //aceptar futuros jsons
 
 //peticiones/intercambio de info
-const morgan = require('morgan');
-const MySQLStore = require('express-mysql-session')(session);
 app.use(morgan('dev')); //que muestra, dev
 app.use(passport.initialize());
 app.use(passport.session());
 
 //mensajes
 app.use(flash());
-
-//sesion
-app.use(session({
-
-    secret: 'projectTable',
-    resave: 'false',
-    saveUninitialized: 'false',
-    cookie: { secure: true }, // this line
-    store: new MySQLStore(database)
-
-}));
 
 //variables globales
 app.use((req, res, next) => {
@@ -61,6 +64,8 @@ app.use((req, res, next) => {
     app.locals.loginOK = req.flash('loginOK');
     app.locals.ErrorLoginNoExiste = req.flash('ErrorLoginNoExiste');
     app.locals.usuario = req.user;
+
+    console.log('sesion: ' + req.user);
 
     next();
 });

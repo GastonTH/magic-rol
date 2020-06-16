@@ -3,7 +3,6 @@ const router = express.Router();
 
 //importamos el fichero passport
 const passportLib = require('passport');
-const passport = require('passport');
 
 router.get('/registro', (req, res) => { //la que renderiza el formulario
     res.render('auth/registro');
@@ -34,5 +33,6 @@ router.post('/login', (req, res, next) => { //lo que llama cuando pulsas el boto
     })(req, res, next)
 
 })
+
 
 module.exports = router;

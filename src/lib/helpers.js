@@ -9,15 +9,7 @@ helpers.encriptar = async(password) => {
 }
 
 helpers.login = async(password, guardada) => {
-
-    try {
-
-        return await bcrypt.compare(password, guardada);
-
-    } catch (error) {
-        console.log(error);
-
-    }
+    return await bcrypt.compare(password, guardada);
 };
 
 module.exports = helpers;

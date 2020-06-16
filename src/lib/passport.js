@@ -1,13 +1,13 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
+//mio
+
 //helpers
 const helpers = require('../lib/helpers');
-
 const connection = require('../database');
 
 passport.use('inicio.sesion', new LocalStrategy({
-
     usernameField: 'username',
     passwordField: 'password',
     passReqToCallback: true
@@ -28,10 +28,8 @@ passport.use('inicio.sesion', new LocalStrategy({
         }
 
     } else {
-        return done(null, false, req.flash('ErrorLoginNoExiste', 'No se encontro el usuario'));
+        done(null, false, req.flash('ErrorLoginNoExiste', 'No se encontro el usuario'));
     }
-
-
 
 }));
 
@@ -43,29 +41,29 @@ passport.use('registro.local', new LocalStrategy({
 
     const { nombre, apellido, correo_electronico } = req.body;
 
-    const nuevoUsuario = {
+    let newUser = {
         username,
         password,
         nombre,
         apellido,
         correo_electronico
-
     }
 
     //const isDupeMail = await connection.query();
 
-    nuevoUsuario.password = await helpers.encriptar(password);
-    const result = await connection.query('INSERT INTO usuarios SET ?', [nuevoUsuario]);
-    nuevoUsuario.id = result.insertId;
+    newUser.password = await helpers.encriptar(password);
+    const result = await connection.query('INSERT INTO usuarios SET ?', newUser);
+    newUser.id = result.insertId;
 
-    return done(null, nuevoUsuario);
+    return done(null, newUser);
 }));
 
 passport.serializeUser((user, done) => {
+    console.log('serialize: ' + user);
     done(null, user.id);
 });
 
 passport.deserializeUser(async(id, done) => {
-    const rows = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
-    done(null, rows[0]);
+    const fila = await connection.query('SELECT * FROM usuarios WHERE id = ?', [id]);
+    done(null, fila[0]);
 });
