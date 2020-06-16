@@ -1,8 +1,8 @@
 const mysql = require('mysql');
 const { database } = require('./db.config');
 const util = require('util');
-//creando la conexion
 
+//creando la conexion
 const connection = mysql.createPool(database);
 
 connection.getConnection((err, connection) => {

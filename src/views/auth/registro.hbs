@@ -1,0 +1,35 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card header">
+                    <h3>REGISTRO</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/registro" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Nombre Usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellido" class="form-control" placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="correo_electronico" class="form-control" placeholder="Correo Electronico">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">
+                            Iniciar sesion
+                        </button></form>
+                    </div>
+                    <p>Si ya tienes cuenta, <a href="/login">Inicia sesion</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

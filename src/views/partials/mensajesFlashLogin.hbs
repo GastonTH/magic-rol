@@ -1,0 +1,47 @@
+{{#if errorPassword}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{errorPassword}}
+                    <button aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+{{#if ErrorLoginNoExiste}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ErrorLoginNoExiste}}
+                    <button aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}
+
+{{#if loginOK}}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{success}}
+                    <button aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}

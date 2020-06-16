@@ -9,7 +9,7 @@ CREATE TABLE Usuarios(
      password VARCHAR(255) NOT NULL,
      nombre VARCHAR(255) NOT NULL,
      apellido VARCHAR(255) NOT NULL,
-     correo_electronico VARCHAR(255) NOT NULL,
+     correo_electronico VARCHAR(255) NOT NULL UNIQUE,
      PRIMARY KEY (id)
 );
 
