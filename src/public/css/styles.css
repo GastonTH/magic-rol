@@ -1,1 +1,27 @@
 /*todos los estilos comunes*/
+
+.index {
+    width: 100%;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.cabecera {
+    color: white;
+    width: 100vw;
+    height: 93vh;
+    background: url('/img/fondoMagicRol.png');
+    background-position: center center;
+    background-size: cover;
+}
+
+.cabecera h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+}

@@ -5,17 +5,58 @@
                 <div class="card-body">
                     <form action="/ficha/edit/{{ficha.id}}" method="POST">
                         <div class="form-group">
-                            <input type="text" value="{{ficha.title}}" class="form-control" name="title" placeholder="titulo" />
+                            <label>Nombre</label>
+                            <input name="nombre" value="{{ficha.nombre}}" type="text" class="form-control" placeholder="Escanor">
                         </div>
                         <div class="form-group">
-                            <input type="text" value="{{ficha.url}}" class="form-control" name="url" placeholder="url" />
+                            <label>Alias</label>
+                            <input name="alias" value="{{ficha.alias}}" type="text" class="form-control" placeholder="Arturo el rey de Camelot">
                         </div>
-                        <div class="form-group">
-                            <textarea name="description" rows="2" class="form-control" placeholder="Descripcion">{{ficha.description}}</textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">Enviar</button>
-                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Nivel</label>
+                                    <input name="nivel" value="{{ficha.nivel}}" type="text" value="1" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Experiencia</label>
+                                    <input name="experiencia" value="{{ficha.experiencia}}" type="text" value="100" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Fuerza</label>
+                                    <input name="fuerza" type="text" value="{{ficha.fuerza}}" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Defensa</label>
+                                    <input name="defensa" type="text" value="{{ficha.defensa}}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Vitalidad</label>
+                                    <input name="vitalidad" type="text" value="{{ficha.vitalidad}}" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Inteligencia</label>
+                                    <input name="inteligencia" type="text" value="{{ficha.inteligencia}}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Destreza</label>
+                                    <input name="destreza" type="text" value="{{ficha.destreza}}" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Fe</label>
+                                    <input name="fe" type="text" value="{{ficha.fe}}" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Carisma</label>
+                                <input name="carisma" type="text" value="{{ficha.carisma}}" class="form-control">
+                            </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>

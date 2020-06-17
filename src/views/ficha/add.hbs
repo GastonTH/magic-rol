@@ -5,17 +5,58 @@
                 <div class="card-body">
                     <form action="/ficha/add" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="title" placeholder="titulo" />
+                            <label>Nombre</label>
+                            <input name="nombre" type="text" class="form-control" placeholder="Escanor">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="url" placeholder="url" />
+                            <label>Alias</label>
+                            <input name="alias" type="text" class="form-control" placeholder="Arturo el rey de Camelot">
                         </div>
-                        <div class="form-group">
-                            <textarea name="description" rows="2" class="form-control" placeholder="Descripcion"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">Enviar</button>
-                        </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Nivel</label>
+                                    <input name="nivel" type="text" value="1" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Experiencia</label>
+                                    <input name="experiencia" type="text" value="100" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Fuerza</label>
+                                    <input name="fuerza" type="text" value="100" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Defensa</label>
+                                    <input name="defensa" type="text" value="100" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Vitalidad</label>
+                                    <input name="vitalidad" type="text" value="100" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Inteligencia</label>
+                                    <input name="inteligencia" type="text" value="100" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Destreza</label>
+                                    <input name="destreza" type="text" value="100" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Fe</label>
+                                    <input name="fe" type="text" value="100" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Carisma</label>
+                                <input name="carisma" type="text" value="100" class="form-control">
+                            </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                     </form>
                 </div>
             </div>
