@@ -6,7 +6,7 @@ const connection = require('../database');
 const { loged } = require('../lib/loged');
 
 router.get('/add', loged, (req, res) => {
-    res.render('links/add'); //renderiza desde la direccion /add -> el fichero > /links/add
+    res.render('ficha/add'); //renderiza desde la direccion /add -> el fichero > /ficha/add
 });
 
 router.post('/add', loged, async(req, res) => {
@@ -19,36 +19,34 @@ router.post('/add', loged, async(req, res) => {
         description,
         user_id: req.user.id
     }
-    await connection.query('INSERT INTO links set ?', nuevaFicha);
+    await connection.query('INSERT INTO ficha set ?', nuevaFicha);
 
-    req.flash('success', 'Link guardado satisfactoriamente'); //tiene dos parametros, nombre variable y texto
+    req.flash('success', 'Ficha guardado satisfactoriamente'); //tiene dos parametros, nombre variable y texto
 
-    res.redirect('/links');
+    res.redirect('/ficha');
 });
 
 
 router.get('/', loged, async(req, res) => {
-    const links = await connection.query('SELECT * FROM links WHERE user_id = ?', req.user.id);
-    //console.log(links);
-
-    res.render('links/list', { links: links }); //renderiza el fichero list de la ruta links/list
+    const ficha = await connection.query('SELECT * FROM ficha WHERE user_id = ?', req.user.id);
+    res.render('ficha/list', { ficha: ficha }); //renderiza el fichero list de la ruta ficha/list
 
 });
 
 router.get('/delete/:id', loged, async(req, res) => {
     const { id } = req.params;
-    await connection.query('DELETE FROM links WHERE id = ?', [id]);
+    await connection.query('DELETE FROM ficha WHERE id = ?', [id]);
 
     req.flash('delete', 'Se ha borrado satisfactoriamente'); //mensaje delete
-    res.redirect('/links');
+    res.redirect('/ficha');
 });
 
 router.get('/edit/:id', loged, async(req, res) => {
     const { id } = req.params;
-    const consulta = await connection.query('SELECT * FROM links WHERE id = ?', [id]);
+    const consulta = await connection.query('SELECT * FROM ficha WHERE id = ?', [id]);
     console.log(consulta[0]);
 
-    res.render('links/edit', { Link: consulta[0] });
+    res.render('ficha/edit', { ficha: consulta[0] });
 });
 
 router.post('/edit/:id', loged, async(req, res) => {
@@ -59,9 +57,9 @@ router.post('/edit/:id', loged, async(req, res) => {
         url,
         description
     };
-    await connection.query('UPDATE links set ? where id=?', [paramUpdate, id]);
-    req.flash('edit', 'Link editado');
-    res.redirect('/links')
+    await connection.query('UPDATE ficha set ? where id=?', [paramUpdate, id]);
+    req.flash('edit', 'Ficha editado');
+    res.redirect('/ficha')
 })
 
 module.exports = router;

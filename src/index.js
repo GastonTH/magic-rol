@@ -73,7 +73,7 @@ app.use((req, res, next) => {
 //rutas
 app.use(require('./routes/routes'));
 app.use(require('./routes/authentication'));
-app.use('/links', require('./routes/links'));
+app.use('/ficha', require('./routes/ficha'));
 
 //archivos publicos
 
