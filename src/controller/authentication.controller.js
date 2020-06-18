@@ -36,4 +36,11 @@ controller_auth.cerrar_sesion = (req, res) => {
     res.redirect('/login');
 };
 
+controller_auth.mostrar_aventura = (req, res) => {
+
+    res.render('ficha/aventura');
+
+}
+
+
 module.exports = controller_auth;

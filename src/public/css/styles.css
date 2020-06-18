@@ -20,8 +20,37 @@
     background-size: cover;
 }
 
+.fondo_aventura {
+    width: 100vw;
+    height: 93vh;
+    background: url('/img/texturas/prado.jpg');
+    background-position: center center;
+}
+
+.fondoPerf_ficha {
+    width: 100vw;
+    height: 93vh;
+    background: url('/img/texturas/listar.jpg');
+    background-position: center center;
+}
+
+.fondoRol {
+    width: 100vw;
+    height: 93vh;
+    background: url('/img/texturas/listar.jpg');
+    background-position: center center;
+}
+
 .cabecera h1 {
     font-size: 4rem;
     margin: 0;
     padding: 0;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-item:hover {
+    color: black;
 }
